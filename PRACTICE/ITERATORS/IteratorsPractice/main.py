@@ -1,0 +1,49 @@
+my_list = ["Age", "Sex", "Name"]
+
+my_iter = iter(my_list)
+
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+
+
+class Test:
+    def __init__(self, limit):
+        self.limit = limit
+
+    def __iter__(self):
+        self.x = 10
+        return self
+
+    def __next__(self):
+        x = self.x
+
+        if x > self.limit:
+            raise StopIteration
+        else:
+            self.x += 1
+            return x
+
+
+for i in Test(15):
+    print(i)
+
+tup = ('a', 'b', 'c', 'd', 'e')
+
+# creating an iterator from the tuple
+tup_iter = iter(tup)
+
+print("Inside loop:")
+# iterating on each item of the iterator object
+for index, item in enumerate(tup_iter):
+    print(item)
+
+    # break outside loop after iterating on 3 elements
+    if index == 2:
+        break
+
+# we can print the remaining items to be iterated using next()
+# thus, the state was saved
+print("Outside loop:")
+print(next(tup_iter))
+print(next(tup_iter))
