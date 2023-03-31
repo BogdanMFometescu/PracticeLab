@@ -31,7 +31,7 @@ for result, number in enumerate(results_lst):
 print("*************************************************")
 
 
-# This can be coded similar without map() by using a simple function
+# This can be coded similar without map() by using a simple function or using filter() function
 
 def find_odd_and_prime_num(num_list):
     for item in num_list:
@@ -42,3 +42,9 @@ def find_odd_and_prime_num(num_list):
 
 
 find_odd_and_prime_num(number_as_integer)
+
+prime_numbers = list(filter(lambda x: (x % 2 == 0), number_as_integer))
+odd_numbers = list(filter(lambda x: (x % 2 != 0), number_as_integer))
+
+print(prime_numbers)
+print(odd_numbers)
