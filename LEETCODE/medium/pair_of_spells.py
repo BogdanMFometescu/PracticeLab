@@ -53,19 +53,30 @@ print(solution.successful_pairs([5, 1, 3], [1, 2, 3, 4, 5], 7))
 # Solution using binary search
 
 class SolutionWithBinarySearch:
+    @staticmethod
+    def successful_pairs(spells: List[int], potions: List[int], success: int) -> List[int]:
+        a = len(spells)
+        b = len(potions)
+        results = [0] * a
 
-    def successful_pairs(self, spells: List[int], potions: List[int], success: int) -> List[int]:
-        pass
+        potions.sort()
+        for i in range(a):
+            spell = spells[i]
+            low = 0
+            high = b - 1
+
+            while low <= high:
+                midpoint = low + (high - low) // 2
+                product = spell * potions[midpoint]
+                if product >= success:
+                    high = midpoint - 1
+                else:
+                    low = midpoint + 1
+
+            results[i] = b - low
+
+        return results
 
 
-
-
-
-
-
-
-
-
-
-
-
+solution_bs = SolutionWithBinarySearch()
+print(solution_bs.successful_pairs([5, 1, 3], [1, 2, 3, 4, 5], 7))
