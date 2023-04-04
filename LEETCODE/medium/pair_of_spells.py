@@ -4,9 +4,6 @@
 # if the product of their strengths is at least success.
 # Return an integer array pairs of length n where pairs[i] is the number of potions
 # that will form a successful pair with the ith spell.
-from typing import List
-
-
 # Example :
 
 # Input: spells = [5,1,3], potions = [1,2,3,4,5], success = 7
@@ -16,9 +13,14 @@ from typing import List
 # - 1st spell: 1 * [1,2,3,4,5] = [1,2,3,4,5]. 0 pairs are successful.
 # - 2nd spell: 3 * [1,2,3,4,5] = [3,6,9,12,15]. 3 pairs are successful.
 # Thus, [4,0,3] is returned.
-#
 
+
+from typing import List
+
+
+# Brute force solution
 class Solution:
+
     @staticmethod
     def successful_pairs(spells: List[int], potions: List[int], success: int) -> List[int]:
         product = []
@@ -46,3 +48,24 @@ class Solution:
 
 solution = Solution()
 print(solution.successful_pairs([5, 1, 3], [1, 2, 3, 4, 5], 7))
+
+
+# Solution using binary search
+
+class SolutionWithBinarySearch:
+
+    def successful_pairs(self, spells: List[int], potions: List[int], success: int) -> List[int]:
+        pass
+
+
+
+
+
+
+
+
+
+
+
+
+
