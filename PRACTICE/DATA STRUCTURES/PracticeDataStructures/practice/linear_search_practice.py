@@ -9,8 +9,17 @@ def linear_search_p(sequence, item):
     return -1
 
 
-li = [33, 3,2,41,1,6]
+li = [33, 3, 2, 41, 1, 6]
 itm = 6
 
-result = linear_search_p(li,itm)
+result = linear_search_p(li, itm)
 print(result)
+
+
+def linear_search(li, target):
+    position = 0
+    while position <= len(li):
+        if li[position] == target:
+            return position
+        position += 1
+    return -1

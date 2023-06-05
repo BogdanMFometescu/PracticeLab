@@ -9,4 +9,4 @@ def find_bugger(num):
     return 1 + find_bugger(total)
 
 
-print(find_bugger(11))
+print(find_bugger(55))
